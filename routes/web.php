@@ -31,5 +31,5 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
   $router->put('parcels',  ['uses' => 'ParcelInformationController@updateParcelInformation']);
   $router->delete('parcels/{id}',  ['uses' => 'ParcelInformationController@deleteParcelInformation']);
 
-  $router->get('pricess/{parcelIds?}',  ['uses' => 'ParcelInformationController@getParcelPricing']);
+  $router->get('prices',  ['uses' => 'ParcelInformationController@getParcelPricing']);
 });

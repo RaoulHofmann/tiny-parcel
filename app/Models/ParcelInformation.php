@@ -19,16 +19,18 @@ class ParcelInformation extends Model
       'quote',
     ];
 
+    protected $appends = ['formatted_quote'];
+
     public function pricing_model()
     {
       return $this->belongsTo(PricingModel::class);
     }
 
-    public function getQuoteAttribute($quote)
+    public function getFormattedQuoteAttribute()
     {
-      if ($quote !== null) {
+      if ($this->quote !== null) {
         // converts cents to dollars for better reading
-        return '$'.$quote / 100;
+        return '$'.$this->quote / 100;
       } else {
         return null;
       }
