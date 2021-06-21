@@ -13,7 +13,7 @@ class ParcelInformation extends Model
     protected $fillable = [
       'item',
       'weight',
-      'volumn',
+      'volume',
       'declared_value',
       'pricing_model_id',
       'quote',
@@ -22,5 +22,15 @@ class ParcelInformation extends Model
     public function pricing_model()
     {
       return $this->belongsTo(PricingModel::class);
+    }
+
+    public function getQuoteAttribute($quote)
+    {
+      if ($quote !== null) {
+        // converts cents to dollars for better reading
+        return '$'.$quote / 100;
+      } else {
+        return null;
+      }
     }
 }

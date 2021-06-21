@@ -24,5 +24,12 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
   $router->get('pricing_models',  ['uses' => 'PricingModelController@getPricingModels']);
   $router->get('pricing_models/parcels',  ['uses' => 'PricingModelController@getPricingModelParcels']);
 
+  // Parcel Information routes
+  $router->get('parcels',  ['uses' => 'ParcelInformationController@getAllParcelInformation']);
+  $router->get('parcels/{id}',  ['uses' => 'ParcelInformationController@getParcelInformation']);
+  $router->post('parcels',  ['uses' => 'ParcelInformationController@addParcelInformation']);
+  $router->put('parcels',  ['uses' => 'ParcelInformationController@updateParcelInformation']);
+  $router->delete('parcels/{id}',  ['uses' => 'ParcelInformationController@deleteParcelInformation']);
 
+  $router->get('pricess/{parcelIds?}',  ['uses' => 'ParcelInformationController@getParcelPricing']);
 });

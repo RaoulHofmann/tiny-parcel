@@ -13,16 +13,16 @@ class CreateParcelInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('parcel_information', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('item');
-            $table->integer('weight');
-            $table->integer('volumn');
-            $table->integer('declared_value');
-            $table->integer('pricing_model_id');
-            $table->integer('quote');
-            $table->timestamps();
-        });
+      Schema::create('parcel_information', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('item');
+        $table->integer('weight');
+        $table->integer('volume');
+        $table->integer('declared_value');
+        $table->integer('pricing_model_id');
+        $table->integer('quote');
+        $table->timestamps();
+      });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateParcelInformationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parcel_information');
+      Schema::dropIfExists('parcel_information');
     }
 }
