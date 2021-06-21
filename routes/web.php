@@ -14,5 +14,15 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+  return $router->app->version();
+});
+
+// Routing group using Auth0 middleware
+$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
+
+  // Pricing Models routes
+  $router->get('pricing_models',  ['uses' => 'PricingModelController@getPricingModels']);
+  $router->get('pricing_models/parcels',  ['uses' => 'PricingModelController@getPricingModelParcels']);
+
+
 });
