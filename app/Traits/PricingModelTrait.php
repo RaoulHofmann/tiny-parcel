@@ -26,6 +26,11 @@ trait PricingModelTrait {
       // Get the pricing models
       $pricing_models = PricingModel::get();
 
+      // Check if pricing model is there
+      if ($pricing_models == null) {
+        return false;
+      }
+
       if ($weight !== null) {
         // Convert grams to kg
         $weight = $weight / 1000;

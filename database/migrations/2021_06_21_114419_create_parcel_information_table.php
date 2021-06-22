@@ -18,7 +18,7 @@ class CreateParcelInformationTable extends Migration
         $table->string('item');
         $table->integer('weight')->nullable();
         $table->integer('volume')->nullable();
-        $table->integer('declared_value'->nullable();
+        $table->integer('declared_value')->nullable();
         $table->integer('pricing_model_id');
         $table->integer('quote');
         $table->timestamps();
