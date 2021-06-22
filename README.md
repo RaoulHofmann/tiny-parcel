@@ -1,17 +1,5 @@
 # Tiny Parcel MicroService
 
-## available routes
-```
-GET /api/pricing_models | returns all pricing models
-GET /api/pricing_models/parcels | returns all pricing models
-GET /api/parcels | returns all parcels
-GET /api/parcels/{id} | returns a parcel
-GET /api/prices/{parcelIds?} | returns all parcel pricings
-DELETE /api/parcels/{id} | deletes a parcel
-POST /api/parcels | Add a new parcel
-PATCH /api/parcels/{id} | Update a  parcel
-```
-
 ## Steps for setting up server
 1. Fill in .env file with info (found below)
 2. run `php artisan migrate` to create tables.
@@ -54,6 +42,18 @@ AUTH0_AUD=tiny_parcel_api
 * `app/Middleware/LogMiddleware.php` Is the file that gets called on every request and create a log entry in the database
 * `bootstrap/app.php` Is the application "config" file
 * `routes/web.php` is the file responsible for the routing
+
+## available routes
+```
+GET /api/pricing_models | returns all pricing models
+GET /api/pricing_models/parcels | returns all pricing models
+GET /api/parcels | returns all parcels
+GET /api/parcels/{id} | returns a parcel
+GET /api/prices/{parcelIds?} | returns all parcel pricings
+DELETE /api/parcels/{id} | deletes a parcel
+POST /api/parcels | Add a new parcel
+PATCH /api/parcels/{id} | Update a  parcel
+```
 
 ## Restrictions
 The values for the weight, quote, value and volume are all reduced to lower units and are set to integers so I did not have to deal with floats. This is something that can be change although there is a few positives with dealing with full integers instead of with floats
