@@ -65,3 +65,9 @@ The values for the weight, quote, value and volume are all reduced to lower unit
 * Create user management and user specific logs
 * Rework pricing_model table format
 * Figure out a better way of dealing with different units as everything is required as either cents, grams, ... and its too dependent on user
+
+
+### NOT RECOMMEND BUT NEEDED
+```
+Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklKUFBwZnZadlE1LS1jbzZVSmRjcSJ9.eyJpc3MiOiJodHRwczovL2Rldi04ODBkNGtsNi5hdS5hdXRoMC5jb20vIiwic3ViIjoieWVoYXNQT0kwMUZ4aE9VNTJLV2xYTFEwelpFNUhTaGxAY2xpZW50cyIsImF1ZCI6InRpbnlfcGFyY2VsX2FwaSIsImlhdCI6MTYyNDM1ODAzMSwiZXhwIjoxNjI0NDQ0NDMxLCJhenAiOiJ5ZWhhc1BPSTAxRnhoT1U1MktXbFhMUTB6WkU1SFNobCIsInNjb3BlIjoicGFjZWw6YWRtaW4iLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.0DlkC3gd_sCQ6PHIHvYF26KEk9PwNdkbhbP9EhOWhwEkeMwxMUUjr_TjIxlcJKO6IocOcXi5qXi_uxJRctXyw2vqzRooupB40JSjCw_EyJWv26ZwlB-2zQV-v8UrZFAEmKkmmVD0NN1bZsm4p_nNYc7nTKzfZnhjnlh59QCmaHR1JqGPL3XkNXF3h3WYJvnUofRHPFq0JGU3xZmvs-sApkOJKgH4xvShAo-S9VV4LbGnQawrK3R595gKOwpGa62lNwsxWh-5eiIbJszNcWnkkLGpNGWY4-_dxivU__S3XcdqQljIq6_T1i8GZbCZlCsBzpYQyAjihSnqfwiwLyIbJA
+```
