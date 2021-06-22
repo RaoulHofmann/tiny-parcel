@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\PricingModel;
 
-
 class PricingModelController extends Controller
 {
     // GET /api/pricing_models | returns all pricing models
@@ -14,9 +13,9 @@ class PricingModelController extends Controller
 
       // If nothing found return message
       if ($pricing_model !== null) {
-        return response()->json(['success' => true, 'data' => $pricing_model]);
+        return response()->json(['success' => true, 'message' => null, 'data' => $pricing_model]);
       } else {
-        return response()->json(['success' => false, 'message' => 'No pricing model found']);
+        return response()->json(['success' => false, 'data' => null, 'message' => 'No pricing model found'], 422);
       }
     }
 
@@ -27,9 +26,9 @@ class PricingModelController extends Controller
 
       // If nothing found return message
       if ($pricing_model !== null) {
-        return response()->json(['success' => true, 'data' => $pricing_model]);
+        return response()->json(['success' => true, 'message' => null, 'data' => $pricing_model]);
       } else {
-        return response()->json(['success' => false, 'message' => 'No pricing model found']);
+        return response()->json(['success' => false, 'data' => null, 'message' => 'No pricing model found'], 422);
       }
     }
 }

@@ -16,9 +16,9 @@ class CreateParcelInformationTable extends Migration
       Schema::create('parcel_information', function (Blueprint $table) {
         $table->increments('id');
         $table->string('item');
-        $table->integer('weight');
-        $table->integer('volume');
-        $table->integer('declared_value');
+        $table->integer('weight')->nullable();
+        $table->integer('volume')->nullable();
+        $table->integer('declared_value'->nullable();
         $table->integer('pricing_model_id');
         $table->integer('quote');
         $table->timestamps();

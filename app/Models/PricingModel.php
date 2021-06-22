@@ -20,4 +20,11 @@ class PricingModel extends Model
     {
       return $this->hasMany(ParcelInformation::class);
     }
+
+    // Validation rules to updating an entry
+    public static $updateRules = [
+     'name'=>'nullable|max:255',
+     'description'=>'nullable|max:255',
+     'value'=>'nullable|integer',
+    ];
 }

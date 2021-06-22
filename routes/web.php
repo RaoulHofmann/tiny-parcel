@@ -28,7 +28,7 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
   $router->get('parcels',  ['uses' => 'ParcelInformationController@getAllParcelInformation']);
   $router->get('parcels/{id}',  ['uses' => 'ParcelInformationController@getParcelInformation']);
   $router->post('parcels',  ['uses' => 'ParcelInformationController@addParcelInformation']);
-  $router->put('parcels',  ['uses' => 'ParcelInformationController@updateParcelInformation']);
+  $router->patch('parcels/{id}',  ['uses' => 'ParcelInformationController@updateParcelInformation']);
   $router->delete('parcels/{id}',  ['uses' => 'ParcelInformationController@deleteParcelInformation']);
 
   $router->get('prices',  ['uses' => 'ParcelInformationController@getParcelPricing']);
