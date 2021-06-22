@@ -4,14 +4,12 @@
 ```
 GET /api/pricing_models | returns all pricing models
 GET /api/pricing_models/parcels | returns all pricing models
-
 GET /api/parcels | returns all parcels
 GET /api/parcels/{id} | returns a parcel
 GET /api/prices/{parcelIds?} | returns all parcel pricings
 DELETE /api/parcels/{id} | deletes a parcel
 POST /api/parcels | Add a new parcel
 PATCH /api/parcels/{id} | Update a  parcel
-
 ```
 
 ## Steps
