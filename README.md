@@ -1,8 +1,9 @@
 # Tiny Parcel MicroService
 
 ## Steps for setting up server
-1. Fill in .env file with info (found below)
-2. run `php artisan migrate` to create tables.
+1. run `composer update`
+2. Fill in .env file with info (found below)
+3. run `php artisan migrate` to create tables.
 
 ### Example .env
 ```
