@@ -37,6 +37,13 @@ class ParcelInformation extends Model
     }
 
     // Validation rules to create new entry
+    public static $calculateRules = [
+     'weight'=>'required_without:volume,declared_value|integer',
+     'volume'=>'required_without:weight,declared_value|integer',
+     'declared_value'=>'required_without:volume,weight|integer',
+    ];
+
+    // Validation rules to create new entry
     public static $createRules = [
      'item'=>'required|max:255',
      'weight'=>'required_without:volume,declared_value|integer',

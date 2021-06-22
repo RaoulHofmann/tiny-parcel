@@ -67,7 +67,14 @@ class ParcelInformationController extends Controller
         return response()->json(['success' => false, 'data' => null, 'message' => 'No information passed along'], 422);
       }
 
-      $pricing_model = $this->calculatePricingModel($request->weight, $request->volume, $request->declared_value);
+      // Try validating request against information in model this is used for the trait
+      try {
+        $calculate_validated_data = $this->validate($request, ParcelInformation::$calculateRules);
+      } catch (ValidationException $ex) {
+        return response()->json(['success' => false, 'data' => null, 'message' => $ex->errors()], 422);
+      }
+
+      $pricing_model = $this->calculatePricingModel($calculate_validated_data->weight, $calculate_validated_data->volume, $calculate_validated_data->declared_value);
 
       // Check if pricing model has return false
       if (!$pricing_model) {
@@ -102,7 +109,7 @@ class ParcelInformationController extends Controller
       }
     }
 
-    // PATCH /api/parcels/{id} | Add a new parcel
+    // PATCH /api/parcels/{id} | Update a parcel
     public function updateParcelInformation(Request $request, $id)
     {
       // check if request is empty
@@ -110,7 +117,14 @@ class ParcelInformationController extends Controller
         return response()->json(['success' => false, 'data' => null, 'message' => 'No information passed along'], 422);
       }
 
-      $pricing_model = $this->calculatePricingModel($request->weight, $request->volume, $request->declared_value);
+      // Try validating request against information in model this is used for the trait
+      try {
+        $calculate_validated_data = $this->validate($request, ParcelInformation::$calculateRules);
+      } catch (ValidationException $ex) {
+        return response()->json(['success' => false, 'data' => null, 'message' => $ex->errors()], 422);
+      }
+
+      $pricing_model = $this->calculatePricingModel($calculate_validated_data->weight, $calculate_validated_data->volume, $calculate_validated_data->declared_value);
 
       // Check if pricing model has return false
       if (!$pricing_model) {
