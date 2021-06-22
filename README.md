@@ -12,9 +12,9 @@ POST /api/parcels | Add a new parcel
 PATCH /api/parcels/{id} | Update a  parcel
 ```
 
-## Steps
+## Steps for setting up server
 1. Fill in .env file with info (found below)
-2. run `php artisan migrate` to fill create tables.
+2. run `php artisan migrate` to create tables.
 
 ### Example .env
 ```
